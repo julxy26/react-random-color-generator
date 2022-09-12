@@ -7,7 +7,7 @@
 }
 
 .btn:hover {
-  box-shadow: 0 8px 16px 0 rgba(64, 64, 64, 0.27);
+  box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
   color: white;
   background-color: transparent;
   border: 3px solid white;
