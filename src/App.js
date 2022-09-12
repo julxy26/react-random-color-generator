@@ -41,7 +41,7 @@ function App() {
           }}
           style={{
             position: 'absolute',
-            top: '48%',
+            top: '40%',
             left: '45%',
             marginTop: '25px',
             width: 'max-content',
