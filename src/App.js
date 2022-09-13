@@ -13,6 +13,10 @@ function App() {
       className="container"
       style={{
         backgroundColor: colorCode,
+        width: 'auto',
+        height: '100vh',
+        display: 'grid',
+        transition: 'all 0.5s ease-in-out',
       }}
     >
       <div

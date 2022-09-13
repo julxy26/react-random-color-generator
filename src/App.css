@@ -1,10 +1,10 @@
-.container {
+/* .container {
   width: auto;
   height: 100vh;
   display: grid;
   align-items: center;
   transition: all 0.5s ease-in-out;
-}
+} */
 
 .btn:hover {
   box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
