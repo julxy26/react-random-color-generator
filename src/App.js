@@ -172,7 +172,7 @@ function App() {
               }}
               css={buttonStyle}
             >
-              GENERATE
+              Generate
             </button>
           </div>
         </form>
