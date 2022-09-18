@@ -58,8 +58,7 @@ const inputField = css`
 `;
 
 function App() {
-  const colorCode = randomColor();
-  const [color, setColor] = useState(colorCode);
+  const [color, setColor] = useState(randomColor());
   const [userLuminosity, setUserLuminosity] = useState('');
   const [userHue, setUserHue] = useState('');
   const userInput = randomColor({
@@ -70,7 +69,7 @@ function App() {
     <div
       className="container"
       style={{
-        backgroundColor: color,
+        backgroundColor: color, // cannot put above the definition
         transition: 'all 0.5s ease-in-out',
         display: 'flex',
         justifyContent: 'center',
@@ -165,6 +164,7 @@ function App() {
           >
             <button
               className="btn"
+              type="button"
               id="generate"
               value="Generate"
               onClick={() => {
@@ -172,7 +172,7 @@ function App() {
               }}
               css={buttonStyle}
             >
-              <strong>GENERATE</strong>
+              GENERATE
             </button>
           </div>
         </form>
