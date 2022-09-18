@@ -14,7 +14,7 @@ const hexStyle = css`
 `;
 
 const buttonStyle = css`
-  border: 1px solid #646a75;
+  border: 1px solid lightgrey;
   background-color: white;
   color: #646a75;
   font-size: 17px;
@@ -157,19 +157,16 @@ function App() {
             </div>
           </fieldset>
 
-          <br />
-          <br />
           <div
             style={{
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center',
-              position: 'relative',
-              marginBottom: '50%',
             }}
           >
             <button
-              id="generate-btn"
+              className="btn"
+              id="generate"
+              value="Generate"
               onClick={() => {
                 setColor(userInput);
               }}
