@@ -14,9 +14,9 @@ const hexStyle = css`
 `;
 
 const buttonStyle = css`
-  border: 1px solid lightgrey;
-  background-color: white;
-  color: #646a75;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
   font-size: 17px;
   font-weight: bold;
   border-radius: 14px;
@@ -27,9 +27,9 @@ const buttonStyle = css`
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
-    color: white;
-    background-color: transparent;
-    border: 1px solid white;
+    color: #646a75;
+    background-color: white;
+    border: 1px solid lightgrey;
     cursor: pointer;
     transition: 0.5s;
   }
