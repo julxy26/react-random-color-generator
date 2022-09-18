@@ -169,7 +169,7 @@ function App() {
             }}
           >
             <button
-              className="btn"
+              id="generate-btn"
               onClick={() => {
                 setColor(userInput);
               }}
