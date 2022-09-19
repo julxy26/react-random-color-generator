@@ -21,6 +21,7 @@ const buttonStyle = css`
   font-weight: bold;
   border-radius: 14px;
   margin-top: 40px;
+  margin-left: 35%;
   padding: 10px 17px;
   transition: all 0.5s ease-in-out;
   box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
@@ -28,7 +29,7 @@ const buttonStyle = css`
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
     color: #646a75;
-    background-color: transparent;
+    background-color: white;
     border: 1px solid lightgrey;
     cursor: pointer;
     transition: 0.5s;
@@ -156,23 +157,16 @@ function App() {
             </div>
           </fieldset>
 
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
+          <button
+            type="button"
+            id="generate"
+            onClick={() => {
+              setColor(userInput);
             }}
+            css={buttonStyle}
           >
-            <button
-              type="button"
-              id="generate"
-              onClick={() => {
-                setColor(userInput);
-              }}
-              css={buttonStyle}
-            >
-              Generate
-            </button>
-          </div>
+            Generate
+          </button>
         </form>
       </div>
     </div>
