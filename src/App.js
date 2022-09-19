@@ -159,8 +159,10 @@ function App() {
               random
             </div>
           </fieldset>
+
           <div>
             <button
+              type="button"
               id="generate"
               onClick={() => {
                 setColor(userInput);
