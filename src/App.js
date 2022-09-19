@@ -28,7 +28,7 @@ const buttonStyle = css`
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
     color: #646a75;
-    background-color: white;
+    background-color: transparent;
     border: 1px solid lightgrey;
     cursor: pointer;
     transition: 0.5s;
