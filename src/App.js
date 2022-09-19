@@ -75,15 +75,21 @@ const buttonStyle = css`
   }
 `;
 
-function App() {
+export default function App() {
   const [userLuminosity, setUserLuminosity] = useState('');
   const [userHue, setUserHue] = useState('');
-  const [userInputColor, setUserInputColor] = useState(randomColor());
+  const [color, setColor] = useState(
+    randomColor({
+      hue: userHue,
+      luminosity: userLuminosity,
+    }),
+  );
+
   return (
     <div
       className="container"
       style={{
-        backgroundColor: userInputColor, // cannot put above the definition
+        backgroundColor: color, // cannot put above the definition
         transition: 'all 0.5s ease-in-out',
         display: 'flex',
         justifyContent: 'center',
@@ -100,7 +106,7 @@ function App() {
         >
           <div css={hexStyle}>
             Generated Color: <br />
-            {userInputColor}
+            {color}
           </div>
 
           <fieldset css={inputStyle}>
@@ -159,7 +165,7 @@ function App() {
             type="button"
             id="generate"
             onClick={() => {
-              setUserInputColor(
+              setColor(
                 randomColor({
                   hue: userHue,
                   luminosity: userLuminosity,
@@ -175,5 +181,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
