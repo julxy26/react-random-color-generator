@@ -79,12 +79,7 @@ const buttonStyle = css`
 export default function App() {
   const [userLuminosity, setUserLuminosity] = useState('');
   const [userHue, setUserHue] = useState('');
-  const [color, setColor] = useState(
-    randomColor({
-      hue: userHue,
-      luminosity: userLuminosity,
-    }),
-  );
+  const [color, setColor] = useState(randomColor());
 
   return (
     <div
