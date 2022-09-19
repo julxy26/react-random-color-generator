@@ -84,12 +84,11 @@ function App() {
     hue: userHue,
     luminosity: userLuminosity,
   });
-  console.log(color);
   return (
     <div
       style={{
         backgroundColor: color, // cannot put above the definition
-        transition: 'all 0.5s ease-in-out',
+        transition: '0.4s ease-out',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
