@@ -5,10 +5,11 @@ import { randomColor } from 'randomcolor';
 import { useState } from 'react';
 
 const formStyle = css`
-  border: 3px solid white;
+  border: 2px solid white;
   border-radius: 8px;
   padding: 30px 60px;
   height: 50vh;
+  box-shadow: 0px 0px 40px 20px rgba(255, 255, 255, 0.4);
 `;
 
 const hexStyle = css`
@@ -95,6 +96,7 @@ export default function App() {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
+        width: '100vw',
       }}
     >
       <form
