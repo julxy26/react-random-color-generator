@@ -97,12 +97,7 @@ function App() {
       }}
     >
       <div>
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-          }}
-          css={formStyle}
-        >
+        <form css={formStyle}>
           <div css={hexStyle}>
             Generated Color: <br />
             {color}
@@ -119,6 +114,7 @@ function App() {
                 <label htmlFor="hue">Color:</label>
                 <input
                   css={inputField}
+                  value={userHue}
                   id="hue"
                   placeholder="type in a hue"
                   onChange={(event) => {
@@ -132,7 +128,7 @@ function App() {
                 value="light"
                 name="luminosity"
                 id="light"
-                onSelect={(event) => {
+                onChange={(event) => {
                   setUserLuminosity(event.currentTarget.value);
                 }}
               />
@@ -142,7 +138,7 @@ function App() {
                 value="dark"
                 name="luminosity"
                 id="dark"
-                onSelect={(event) => {
+                onChange={(event) => {
                   setUserLuminosity(event.currentTarget.value);
                 }}
               />
@@ -152,7 +148,7 @@ function App() {
                 value=""
                 name="luminosity"
                 id="random"
-                onSelect={(event) => {
+                onChange={(event) => {
                   setUserLuminosity(event.currentTarget.value);
                 }}
               />
