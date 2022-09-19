@@ -77,7 +77,7 @@ const buttonStyle = css`
 `;
 
 function App() {
-  const [color, setColor] = useState('#92c1e8');
+  const [color, setColor] = useState('#828ded');
   const [userLuminosity, setUserLuminosity] = useState('');
   const [userHue, setUserHue] = useState('');
   const userInput = randomColor({
