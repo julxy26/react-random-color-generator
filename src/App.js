@@ -4,6 +4,13 @@ import { css } from '@emotion/react';
 import { randomColor } from 'randomcolor';
 import { useState } from 'react';
 
+const formStyle = css`
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 30px 60px;
+  height: 50vh;
+`;
+
 const hexStyle = css`
   font-size: 30px;
   text-align: center;
@@ -13,27 +20,14 @@ const hexStyle = css`
   margin-top: 50px;
 `;
 
-const buttonStyle = css`
-  border: 1px solid white;
-  background-color: transparent;
+const inputStyle = css`
+  border: none;
   color: white;
-  font-size: 17px;
   font-weight: bold;
-  border-radius: 14px;
-  margin-top: 40px;
-  margin-left: 35%;
-  padding: 10px 17px;
-  transition: all 0.5s ease-in-out;
-  box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
-
-  &:hover {
-    box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
-    color: #646a75;
-    background-color: white;
-    border: 1px solid lightgrey;
-    cursor: pointer;
-    transition: 0.5s;
-  }
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  margin-left: 40px;
 `;
 
 const inputField = css`
@@ -58,19 +52,38 @@ const inputField = css`
   }
 `;
 
+const buttonStyle = css`
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 14px;
+  margin-top: 40px;
+  margin-left: 35%;
+  padding: 10px 17px;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.1);
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
+    color: #646a75;
+    background-color: white;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+`;
+
 function App() {
-  const [color, setColor] = useState(randomColor());
   const [userLuminosity, setUserLuminosity] = useState('');
   const [userHue, setUserHue] = useState('');
-  const userInput = randomColor({
-    hue: userHue,
-    luminosity: userLuminosity,
-  });
+  const [userInputColor, setUserInputColor] = useState(randomColor());
   return (
     <div
       className="container"
       style={{
-        backgroundColor: color, // cannot put above the definition
+        backgroundColor: userInputColor, // cannot put above the definition
         transition: 'all 0.5s ease-in-out',
         display: 'flex',
         justifyContent: 'center',
@@ -78,34 +91,19 @@ function App() {
         height: '100vh',
       }}
     >
-      <div
-        style={{
-          border: '3px solid white',
-          borderRadius: '8px',
-          padding: '40px',
-          height: '60vh',
-        }}
-      >
+      <div>
         <form
           onSubmit={(event) => {
             event.preventDefault();
           }}
+          css={formStyle}
         >
           <div css={hexStyle}>
             Generated Color: <br />
-            {color}
+            {userInputColor}
           </div>
 
-          <fieldset
-            style={{
-              border: 'none',
-              marginTop: '45px',
-              color: 'white',
-              fontWeight: 'bold',
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-          >
+          <fieldset css={inputStyle}>
             <div>
               <span
                 style={{
@@ -161,7 +159,12 @@ function App() {
             type="button"
             id="generate"
             onClick={() => {
-              setColor(userInput);
+              setUserInputColor(
+                randomColor({
+                  hue: userHue,
+                  luminosity: userLuminosity,
+                }),
+              );
             }}
             css={buttonStyle}
           >
