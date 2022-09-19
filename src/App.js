@@ -160,21 +160,23 @@ export default function App() {
           </div>
         </fieldset>
 
-        <button
-          type="button"
-          id="generate"
-          onClick={() => {
-            setColor(
-              randomColor({
-                hue: userHue,
-                luminosity: userLuminosity,
-              }),
-            );
-          }}
-          css={buttonStyle}
-        >
-          Generate
-        </button>
+        <div>
+          <button
+            type="button"
+            id="generate"
+            onClick={() => {
+              setColor(
+                randomColor({
+                  hue: userHue,
+                  luminosity: userLuminosity,
+                }),
+              );
+            }}
+            css={buttonStyle}
+          >
+            Generate
+          </button>
+        </div>
       </form>
     </div>
   );
