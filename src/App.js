@@ -88,7 +88,6 @@ function App() {
     <div
       style={{
         backgroundColor: color, // cannot put above the definition
-        transition: '0.4s ease-out',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
