@@ -87,9 +87,9 @@ export default function App() {
 
   return (
     <div
-      className="container"
       style={{
         backgroundColor: color, // cannot put above the definition
+        color: color,
         transition: 'all 0.5s ease-in-out',
         display: 'flex',
         justifyContent: 'center',
@@ -97,87 +97,85 @@ export default function App() {
         height: '100vh',
       }}
     >
-      <div>
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-          }}
-          css={formStyle}
-        >
-          <div css={hexStyle}>
-            Generated Color: <br />
-            {color}
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
+        css={formStyle}
+      >
+        <div css={hexStyle}>
+          Generated Color: <br />
+          {color}
+        </div>
+
+        <fieldset css={inputStyle}>
+          <div>
+            <span
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <label htmlFor="hue">Color:</label>
+              <input
+                css={inputField}
+                id="hue"
+                placeholder="type in a hue"
+                onChange={(event) => {
+                  setUserHue(event.currentTarget.value);
+                }}
+              />
+            </span>
+            <label htmlFor="luminosity">Luminosity:</label>
+            <input
+              type="radio"
+              value="light"
+              name="luminosity"
+              id="light"
+              onChange={(event) => {
+                setUserLuminosity(event.currentTarget.value);
+              }}
+            />
+            light
+            <input
+              type="radio"
+              value="dark"
+              name="luminosity"
+              id="dark"
+              onChange={(event) => {
+                setUserLuminosity(event.currentTarget.value);
+              }}
+            />
+            dark
+            <input
+              type="radio"
+              value=""
+              name="luminosity"
+              id="random"
+              onChange={(event) => {
+                setUserLuminosity(event.currentTarget.value);
+              }}
+            />
+            random
           </div>
+        </fieldset>
 
-          <fieldset css={inputStyle}>
-            <div>
-              <span
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
-                <label htmlFor="hue">Color:</label>
-                <input
-                  css={inputField}
-                  id="hue"
-                  placeholder="type in a hue"
-                  onChange={(event) => {
-                    setUserHue(event.currentTarget.value);
-                  }}
-                />
-              </span>
-              <label htmlFor="luminosity">Luminosity:</label>
-              <input
-                type="radio"
-                value="light"
-                name="luminosity"
-                id="light"
-                onChange={(event) => {
-                  setUserLuminosity(event.currentTarget.value);
-                }}
-              />
-              light
-              <input
-                type="radio"
-                value="dark"
-                name="luminosity"
-                id="dark"
-                onChange={(event) => {
-                  setUserLuminosity(event.currentTarget.value);
-                }}
-              />
-              dark
-              <input
-                type="radio"
-                value=""
-                name="luminosity"
-                id="random"
-                onChange={(event) => {
-                  setUserLuminosity(event.currentTarget.value);
-                }}
-              />
-              random
-            </div>
-          </fieldset>
-
-          <button
-            type="button"
-            id="generate"
-            onClick={() => {
-              setColor(
-                randomColor({
-                  hue: userHue,
-                  luminosity: userLuminosity,
-                }),
-              );
-            }}
-            css={buttonStyle}
-          >
-            Generate
-          </button>
-        </form>
-      </div>
+        <button
+          type="button"
+          id="generate"
+          onClick={() => {
+            setColor(
+              randomColor({
+                hue: userHue,
+                luminosity: userLuminosity,
+              }),
+            );
+          }}
+          css={buttonStyle}
+        >
+          Generate
+        </button>
+      </form>
     </div>
   );
 }
