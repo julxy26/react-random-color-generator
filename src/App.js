@@ -4,14 +4,7 @@ import { css } from '@emotion/react';
 import { randomColor } from 'randomcolor';
 import { useState } from 'react';
 
-const containerStyle = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const formStyle = css`
-  margin-top: 150px;
   border: 2px solid white;
   border-radius: 8px;
   padding: 30px 60px;
@@ -94,20 +87,18 @@ export default function App() {
   );
 
   return (
-    <div css={containerStyle}>
-      <div
-        style={{
-          backgroundColor: color, // cannot put above the definition
-          border: 'none',
-          transition: 'all 0.5s ease-in-out',
-          height: '100vh',
-          width: '100vw',
-          position: 'absolute',
-          left: '0px',
-          top: '0px',
-          zIndex: '-1',
-        }}
-      />
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: color, // cannot put above the definition
+        border: 'none',
+        transition: 'all 0.5s ease-in-out',
+        height: '100vh',
+        width: '100vw',
+      }}
+    >
       <form
         onSubmit={(event) => {
           event.preventDefault();
