@@ -102,11 +102,12 @@ function App() {
           }}
           css={formStyle}
         >
-          <h1 css={hexStyle}>
-            Generated Color: <br />
-            {color}
-          </h1>
-
+          <div>
+            <h1 css={hexStyle}>
+              Generated Color: <br />
+              {color}
+            </h1>
+          </div>
           <fieldset css={inputStyle}>
             <div>
               <span
