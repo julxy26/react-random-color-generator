@@ -63,11 +63,11 @@ const buttonStyle = css`
   margin-top: 40px;
   margin-left: 35%;
   padding: 10px 17px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
   box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.1);
 
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.3);
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.3);
     color: #646a75;
     background-color: white;
     border: 1px solid lightgrey;
