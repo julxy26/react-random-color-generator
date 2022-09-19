@@ -80,6 +80,7 @@ export default function App() {
   const [userLuminosity, setUserLuminosity] = useState('');
   const [userHue, setUserHue] = useState('');
   const [color, setColor] = useState(randomColor());
+  console.log(color);
 
   return (
     <div
@@ -118,7 +119,7 @@ export default function App() {
                 css={inputField}
                 id="hue"
                 placeholder="type in a hue"
-                onChange={(event) => {
+                onSubmit={(event) => {
                   setUserHue(event.currentTarget.value);
                 }}
               />
@@ -129,7 +130,7 @@ export default function App() {
               value="light"
               name="luminosity"
               id="light"
-              onChange={(event) => {
+              onSubmit={(event) => {
                 setUserLuminosity(event.currentTarget.value);
               }}
             />
@@ -139,7 +140,7 @@ export default function App() {
               value="dark"
               name="luminosity"
               id="dark"
-              onChange={(event) => {
+              onSubmit={(event) => {
                 setUserLuminosity(event.currentTarget.value);
               }}
             />
