@@ -102,11 +102,9 @@ function App() {
           }}
           css={formStyle}
         >
-          <div>
-            <h1 css={hexStyle}>
-              Generated Color: <br />
-              {color}
-            </h1>
+          <div css={hexStyle}>
+            Generated Color: <br />
+            {color}
           </div>
           <fieldset css={inputStyle}>
             <div>
@@ -163,7 +161,6 @@ function App() {
 
           <div>
             <button
-              type="button"
               id="generate"
               onClick={() => {
                 setColor(userInput);
