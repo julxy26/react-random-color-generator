@@ -89,7 +89,7 @@ export default function App() {
     <div
       style={{
         backgroundColor: color, // cannot put above the definition
-        color: color,
+        border: 'none',
         transition: 'all 0.5s ease-in-out',
         display: 'flex',
         justifyContent: 'center',
