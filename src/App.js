@@ -38,7 +38,7 @@ const inputField = css`
   padding: 0 16px;
   height: 29px;
   width: 153px;
-  margin: 12px 48px;
+  margin: 0px 44px 12px 48px;
   background-color: #fff;
   border: 1px solid #d6d6e7;
   border-radius: 12px;
@@ -103,10 +103,10 @@ function App() {
           }}
           css={formStyle}
         >
-          <div css={hexStyle}>
+          <h1 css={hexStyle}>
             Generated Color: <br />
             {color}
-          </div>
+          </h1>
 
           <fieldset css={inputStyle}>
             <div>
