@@ -4,6 +4,16 @@ import { css } from '@emotion/react';
 import { randomColor } from 'randomcolor';
 import { useState } from 'react';
 
+const backgroundStyle = (color) => css`
+  background-color: ${color};
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+`;
+
 const formStyle = css`
   border: 2px solid white;
   border-radius: 8px;
@@ -12,13 +22,15 @@ const formStyle = css`
   box-shadow: 0px 0px 40px 20px rgba(255, 255, 255, 0.4);
 `;
 
-const hexStyle = css`
+const hexStyle = (color) => css`
+  background-color: ${color};
+  transition: all 0.4s ease-in-out;
+  margin-top: 50px;
+  color: white;
   font-size: 30px;
   text-align: center;
   font-weight: bold;
   border: none;
-  color: white;
-  margin-top: 50px;
 `;
 
 const inputStyle = css`
@@ -77,7 +89,7 @@ const buttonStyle = css`
 `;
 
 function App() {
-  const [color, setColor] = useState('#828ded');
+  const [color, setColor] = useState(randomColor());
   const [userLuminosity, setUserLuminosity] = useState('');
   const [userHue, setUserHue] = useState('');
   const userInput = randomColor({
@@ -85,16 +97,7 @@ function App() {
     luminosity: userLuminosity,
   });
   return (
-    <div
-      style={{
-        backgroundColor: color, // cannot put above the definition
-        transition: '0.4s ease-out',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
+    <div css={backgroundStyle(color)}>
       <div>
         <form
           onSubmit={(event) => {
@@ -102,7 +105,8 @@ function App() {
           }}
           css={formStyle}
         >
-          <div css={hexStyle}>Generated Color: {color}</div>
+          <div css={hexStyle(color)}>Generated Color: {color}</div>
+
           <fieldset css={inputStyle}>
             <div>
               <span
