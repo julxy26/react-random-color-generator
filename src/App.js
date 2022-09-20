@@ -25,7 +25,7 @@ const formStyle = css`
 const hexStyle = (color) => css`
   background-color: ${color};
   transition: all 0.4s ease-in-out;
-  margin-top: 50px;
+  margin-top: 70px;
   color: white;
   font-size: 30px;
   text-align: center;
@@ -72,7 +72,7 @@ const buttonStyle = css`
   font-size: 17px;
   font-weight: bold;
   border-radius: 14px;
-  margin-top: 40px;
+  margin-top: 50px;
   margin-left: 35%;
   padding: 10px 17px;
   transition: all 0.4s ease-in-out;
