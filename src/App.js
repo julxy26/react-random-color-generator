@@ -15,32 +15,48 @@ const backgroundStyle = (color) => css`
 `;
 
 const formStyle = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 2px solid white;
   border-radius: 8px;
   padding: 30px 60px;
-  height: 50vh;
   box-shadow: 0px 0px 40px 20px rgba(255, 255, 255, 0.4);
 `;
 
 const hexStyle = (color) => css`
   background-color: ${color};
   transition: all 0.4s ease-in-out;
-  margin-top: 70px;
+  margin: 0 auto;
+  margin-top: 60px;
   color: white;
   font-size: 30px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 700;
+  line-height: 50px;
   border: none;
+  width: 300px;
+
+  span {
+    text-transform: uppercase;
+  }
 `;
 
 const inputStyle = css`
   border: none;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   display: flex;
   justify-content: center;
-  margin-top: 45px;
+  line-height: 25px;
+  margin-top: 25px;
   margin-left: 40px;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const inputField = css`
@@ -70,13 +86,14 @@ const buttonStyle = css`
   background-color: transparent;
   color: white;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 700;
   border-radius: 14px;
-  margin-top: 50px;
-  margin-left: 35%;
+  margin-top: 30px;
+  margin-bottom: 70px;
   padding: 10px 17px;
   transition: all 0.4s ease-in-out;
   box-shadow: 0 8px 16px 0 rgba(28, 28, 28, 0.1);
+  text-transform: uppercase;
 
   &:hover {
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.3);
@@ -105,16 +122,13 @@ function App() {
           }}
           css={formStyle}
         >
-          <div css={hexStyle(color)}>Generated Color: {color}</div>
+          <div css={hexStyle(color)}>
+            Generated Color: <span>{color}</span>
+          </div>
 
           <fieldset css={inputStyle}>
             <div>
-              <span
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
+              <span>
                 <label htmlFor="hue">Color:</label>
                 <input
                   css={inputField}
